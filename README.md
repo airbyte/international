@@ -28,9 +28,9 @@ English output for **android**, `/values-en/translation.xml`:
 ```xml
 <?xml version="1.0" ?>
 <resources>
-    <string name="welcome_message">hello</string>
-    <string name="thank_you_message">thank you</string>
-    <string name="goodbye_message">goodbye</string>
+    <string name="welcome_message">Welcome</string>
+    <string name="thank_you_message">Thank you</string>
+    <string name="goodbye_message">Goodbye</string>
 </resources>
 ```
 

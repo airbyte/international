@@ -2,6 +2,7 @@ require 'colorize'
 require 'international/version'
 require 'csv'
 require 'file_manager'
+require 'core_ext/string'
 
 module International
 
@@ -104,7 +105,7 @@ module International
     end
 
     def separate_languages(all)
-      languages = all.first.keys.drop(1)
+      languages = all.first.keys.drop(2)
       separated = Hash.new
 
       languages.each do |lang|
