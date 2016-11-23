@@ -1,4 +1,4 @@
 <?xml version="1.0" ?>
 <resources><% for @item in @items %>
-  <string name="<%= @item[:key] %>"><%= @item[:translation].normalized_for_android %></string><% end %>
+  <string name="<%= @item[:key].upcase %>"><%= @item[:translation].normalized_for_android %></string><% end %>
 </resources>

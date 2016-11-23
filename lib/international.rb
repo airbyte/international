@@ -113,6 +113,7 @@ module International
         all.each do |row|
 
           next if row.first.nil?
+          next if row[lang].nil?
 
           item = {
             :key => row.first.last, # dem hacks
@@ -122,8 +123,10 @@ module International
           items.push item
         end
 
-        manager = FileManager.new lang, items, @path_to_output, @platform, @dryrun
-        manager.create_file
+        if items.any?
+          manager = FileManager.new lang, items, @path_to_output, @platform, @dryrun
+          manager.create_file
+        end
       end
     end
 
