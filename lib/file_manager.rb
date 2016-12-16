@@ -28,7 +28,7 @@ class FileManager
     if @platform.eql?'android'
       "values-#{@language}/translation.xml"
     else
-      "#{@language}.lbproj/Localizable.strings"
+      "#{@language}.lproj/Localizable.strings"
     end
   end
 

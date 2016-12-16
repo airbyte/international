@@ -4,6 +4,23 @@ class String
   end
 
   def normalized_for_android
-    self.gsub('"', '\"').gsub("'", %q(\\\')).gsub('%@', '%s')
+    str = self.gsub('"', '\"').gsub("'", %q(\\\')).gsub('&', '&amp;')
+
+    idx = 0
+    str = str.gsub(/(%@|%d|%s)/) do |sstr|
+
+      idx += 1
+      case sstr
+      when "%@"
+        "%#{idx}$s"
+      when "%s"
+        "%#{idx}$s"
+      when "%d"
+        "%#{idx}$d"
+      else
+        sstr
+      end
+    end
+    str
   end
 end
