@@ -3,6 +3,7 @@ require 'international/version'
 require 'csv'
 require 'file_manager'
 require 'core_ext/string'
+require 'optparse'
 
 module International
 
@@ -31,7 +32,8 @@ module International
     ### Options parser
     def create_options_parser(args)
 
-      args.options do |opts|
+      options = {}
+      OptionParser.new do |opts|
         opts.banner = "Usage: international [OPTIONS]"
         opts.separator  ''
         opts.separator  "Options"
@@ -66,9 +68,9 @@ module International
           puts International::VERSION
           exit
         end
-        opts.parse!
 
-      end
+      end.parse!
+
     end
 
     ### Manage options
